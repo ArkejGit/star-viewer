@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
+import AppNavbar from './AppNavbar/AppNavbar';
 import './App.css';
 
 class App extends Component {
@@ -7,15 +7,10 @@ class App extends Component {
     return (
       <div className="App">
 
-      <Navbar>
-        <Navbar.Header>
-          <Navbar.Brand>
-            <a href="/">Star Viever</a>
-          </Navbar.Brand>
-        </Navbar.Header>
-      </Navbar>;
+        <AppNavbar />
 
         <p>Star Viewer</p>
+        
       </div>
     );
   }

@@ -1,0 +1,10 @@
+.navbar-header {
+	float: none;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.navbar-brand {
+	display: block;
+	float: none;
+}

@@ -9,8 +9,10 @@ class App extends Component {
 
         <AppNavbar />
 
-        <p>Star Viewer</p>
-        
+        <div className="container text-center">
+          <div className="sphere"></div>
+        </div>
+
       </div>
     );
   }

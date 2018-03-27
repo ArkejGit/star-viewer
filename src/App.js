@@ -14,7 +14,7 @@ class App extends Component {
       stars: []
     }
 
-    this.getStars( 1 );
+    this.getStars( 3 );
   }
 
   getStars( magnitude ) {

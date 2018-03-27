@@ -8,7 +8,10 @@ const Sphere = ({ stars }) => {
 		return(
 			<Star 
 				name={ star.name }
-				key={ star.id } />
+				key={ star.id }
+				ra={ star.ra }
+				de={ star.de }
+			/>
 		)
 	});
 

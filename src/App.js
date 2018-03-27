@@ -22,8 +22,9 @@ class App extends Component {
       .then( res => res.json() )
       .catch( err => console.log( err ) )
       .then( data => {
+        const stars = Object.keys(data.hipstars).map(key => data.hipstars[key]);
         this.setState({
-          stars: data.hipstars
+          stars: stars
         })
         console.log( this.state.stars );
       });
@@ -37,8 +38,8 @@ class App extends Component {
 
         <div className="container">
 
-          <Sphere />
-          
+          <Sphere stars={ this.state.stars } />
+
         </div>
 
       </div>

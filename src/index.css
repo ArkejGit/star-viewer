@@ -2,22 +2,3 @@ body {
 	margin: 0;
 	padding: 0;
 }
-
-.sphere {
-	width: 80vh;
-	background-color: #131862;
-	border-radius: 50%;
-	margin: 0 auto;
-}
-
-@media (orientation: portrait) {
-	.sphere {
-		width: 80vw;
-	}	
-}
- 
-.sphere:after {
-	content: "";
-	display: block;
-	padding-bottom: 100%;
-}

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import AppNavbar from './AppNavbar/AppNavbar';
+import Sphere from './Sphere/Sphere';
 import './App.css';
 
 const API = 'http://www.astropical.space/astrodb/api.php?';
@@ -35,7 +36,9 @@ class App extends Component {
         <AppNavbar />
 
         <div className="container">
-          <div className="sphere"></div>
+
+          <Sphere />
+          
         </div>
 
       </div>

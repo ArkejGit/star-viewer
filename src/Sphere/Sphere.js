@@ -6,7 +6,9 @@ const Sphere = ({ stars }) => {
 
 	const starsCollection = stars.map( star => {
 		return(
-			<Star name={ star.name } />
+			<Star 
+				name={ star.name }
+				key={ star.id } />
 		)
 	});
 

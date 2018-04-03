@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import AppNavbar from './AppNavbar/AppNavbar';
 import Sphere from './Sphere/Sphere';
+import InputRange from 'react-input-range';
+import 'react-input-range/lib/css/index.css';
 import './App.css';
 
 const API = 'http://www.astropical.space/astrodb/api.php?';
@@ -45,6 +47,13 @@ class App extends Component {
         <AppNavbar />
 
         <div className="container">
+
+        <InputRange
+          maxValue={5}
+          minValue={0}
+          value={this.state.magnitudeLimit}
+          onChange={value => this.setState({ magnitudeLimit: value })}
+        />
 
           <Sphere 
             stars={ this.state.stars }

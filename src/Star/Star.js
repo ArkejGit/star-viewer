@@ -3,6 +3,16 @@ import './Star.css';
 
 const Star = ({ name, ra, de }) => {
 
+	/**
+	 * calculatePositionOfStar(ra,de)
+	 *
+	 * Takes two basic astronomical coordinates of a star (right ascension & declination) and returns distances from top and left of Sphere container (expressed as a percentage of entire container's width).
+	 *
+	 * @param {Number}   ra     Right ascension
+	 * @param {Number}   de     Declination
+	 * 
+	 * @return {Object}     Object with two properties: {String} top, {String} left
+	 */
 	const calculatePositionOfStar = (ra, de) => {
 
 		const sphere = document.querySelector('.sphere');

@@ -18,6 +18,13 @@ class App extends Component {
     this.getStars();
   }
 
+  /**
+ * getStars()
+ *
+ * Fetches data from API, converts it to Array and save it to state.stars
+ *
+ * @return {type} Description.
+ */
   getStars() {
     fetch(`${API}table=stars&which=magnitude&limit=4.97&format=json`)
       .then( res => res.json() )

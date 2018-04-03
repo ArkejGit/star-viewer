@@ -11,14 +11,15 @@ class App extends Component {
     super( props );
 
     this.state = {
-      stars: []
+      stars: [],
+      magnitudeLimit: 3
     }
 
-    this.getStars( 3 );
+    this.getStars();
   }
 
-  getStars( magnitude ) {
-    fetch(`${API}table=stars&which=magnitude&limit=${magnitude}&format=json`)
+  getStars() {
+    fetch(`${API}table=stars&which=magnitude&limit=4.97&format=json`)
       .then( res => res.json() )
       .catch( err => console.log( err ) )
       .then( data => {
@@ -38,7 +39,10 @@ class App extends Component {
 
         <div className="container">
 
-          <Sphere stars={ this.state.stars } />
+          <Sphere 
+            stars={ this.state.stars }
+            magnitudeLimit={ this.state.magnitudeLimit }
+           />
 
         </div>
 

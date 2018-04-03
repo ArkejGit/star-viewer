@@ -2,9 +2,9 @@ import React from 'react';
 import './Sphere.css';
 import Star from '../Star/Star'
 
-const Sphere = ({ stars }) => {
+const Sphere = ({ stars, magnitudeLimit }) => {
 
-	const starsCollection = stars.map( star => {
+	const starsCollection = stars.filter(star => star.mag < magnitudeLimit ).map( star => {
 		return(
 			<Star 
 				name={ star.name }

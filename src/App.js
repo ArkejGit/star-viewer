@@ -25,18 +25,22 @@ class App extends Component {
  *
  * Fetches data from API, converts it to Array and save it to state.stars
  *
- * @return {type} Description.
+ * @return {Boolean} Returns false in case of error, otherwise returns true.
  */
   getStars() {
     fetch(`${API}table=stars&which=magnitude&limit=4.97&format=json`)
       .then( res => res.json() )
-      .catch( err => console.log( err ) )
+      .catch( err => {
+        console.log( err );
+        return false;
+      })
       .then( data => {
         const stars = Object.keys(data.hipstars).map(key => data.hipstars[key]);
         this.setState({
           stars: stars
         })
         console.log( this.state.stars );
+        return true;
       });
   }
 

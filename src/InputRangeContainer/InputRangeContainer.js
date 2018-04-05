@@ -24,6 +24,7 @@ const InputRangeContainer = ({ magnitudeLimit, onChange }) => {
           <InputRange
             maxValue={5}
             minValue={0}
+            step={0.5}
             value={ magnitudeLimit }
             onChange={ value => onChange(value) }
           />

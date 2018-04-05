@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import AppNavbar from './AppNavbar/AppNavbar';
 import Sphere from './Sphere/Sphere';
-import InputRangeContainer from './InputRangeContainer/InputRangeContainer'
-import 'react-input-range/lib/css/index.css';
+import InputRangeContainer from './InputRangeContainer/InputRangeContainer';
 import './App.css';
 
 const API = 'http://www.astropical.space/astrodb/api.php?';

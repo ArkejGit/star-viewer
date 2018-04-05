@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import AppNavbar from './AppNavbar/AppNavbar';
 import Sphere from './Sphere/Sphere';
-import InputRange from 'react-input-range';
+import InputRangeContainer from './InputRangeContainer/InputRangeContainer'
 import 'react-input-range/lib/css/index.css';
 import './App.css';
 
@@ -52,28 +52,21 @@ class App extends Component {
 
         <div className="container">
 
-        <div className="col-xs-6 col-xs-offset-3 col-md-4 col-md-offset-4 text-center">
-          <p>Magnitude</p>
-          <div className="input-range-container">
-            <span class="glyphicon glyphicon-star glyphicon-big"></span>
-            <InputRange
-              maxValue={5}
-              minValue={0}
-              value={this.state.magnitudeLimit}
-              onChange={value => this.setState({ magnitudeLimit: value })}
+          <div className="col-xs-6 col-xs-offset-3 col-md-4 col-md-offset-4 text-center">
+            <InputRangeContainer 
+              magnitudeLimit={ this.state.magnitudeLimit }
+              onChange={ (value) => this.setState({ magnitudeLimit: value }) }
             />
-            <span class="glyphicon glyphicon-star"></span>
-            </div>
-        </div>
+          </div>
 
-        <div className="col-xs-12">
-          <Sphere 
-            stars={ this.state.stars }
-            magnitudeLimit={ this.state.magnitudeLimit }
-           />
-        </div>
+          <div className="col-xs-12">
+            <Sphere 
+              stars={ this.state.stars }
+              magnitudeLimit={ this.state.magnitudeLimit }
+             />
+          </div>
 
-        </div>
+          </div>
 
       </div>
     );

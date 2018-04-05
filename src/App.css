@@ -8,6 +8,27 @@
 	align-items: center;
 }
 
+.input-range__label {
+	color: #5e5e5e;
+}
+
+.input-range__track {
+	color: #f8f8f8;
+}
+
+.input-range__track--active {
+	background: #131862;
+}
+
+.input-range__slider {
+	background: #131862;
+	border: 1px solid #131862;
+}
+
 .glyphicon-big {
 	font-size: 1.5em;
+}
+
+.glyphicon-star {
+	color: #feb236;
 }

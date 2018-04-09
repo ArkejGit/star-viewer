@@ -15,9 +15,6 @@ const Star = ({ name, ra, de }) => {
 	 */
 	const calculatePositionOfStar = (ra, de) => {
 
-		const sphere = document.querySelector('.sphere');
-		const sphereWidth = parseInt( window.getComputedStyle(sphere, null).getPropertyValue('width'), 0);
-
 		// calculate top
 		const top = `${50 - 0.555 * de}%`;
 

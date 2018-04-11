@@ -15,12 +15,12 @@ import { Tooltip, OverlayTrigger } from 'react-bootstrap';
 const calculatePositionOfStar = (ra, de) => {
 
 	// calculate top
-	const top = `${50 - 0.555 * de}%`;
+	const top = `${50 - 50/90 * de}%`;
 
 	// calculate left
-	const h = 1 - 0.011 * Math.abs(de);
+	const h = 1 - 1/90 * Math.abs(de);
 	const chordWidth = 2 * Math.sqrt( 2 * h - h * h );
-	const raAsPercentage = ra * 8.333;
+	const raAsPercentage = ra * 100/12;
 	const left = `${ (100 - chordWidth * 50) / 2 + chordWidth * 0.5 * raAsPercentage }%`;
 
 	return { top: top, left: left };

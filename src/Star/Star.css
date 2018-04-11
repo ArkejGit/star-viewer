@@ -7,7 +7,7 @@
 	background-color: #feb236;
 	transform: translate(-2px, -2px);
 	cursor: pointer;
-	transition: all 1s ease;
+	transition: border 1s ease;
 }
 
 .star:hover {

@@ -45,12 +45,22 @@ class App extends Component {
       });
   };
 
+  /**
+  * handleMouseDown()
+  *
+  * Sets state.clicked to true when onMouseDown event appears on Sphere
+  */
   handleMouseDown() {
     this.setState({
       clicked: true
     });
   };
 
+  /**
+  * handleMouseUp()
+  *
+  * Sets state.clicked to false when onMouseUp event appears on Sphere
+  */
   handleMouseUp() {
     this.setState({
       clicked: false,
@@ -58,6 +68,13 @@ class App extends Component {
     });
   };
 
+  /**
+  * handleMouseMove()
+  *
+  * @param {Event Object}   e   Mouse move event object
+  *
+  * Calculates the change of right ascension for every star, based on user's mouse move, and sets it to the state
+  */
   handleMouseMove(e) {
     const sphere = document.querySelector('.sphere');
     const sphereSize = parseInt( window.getComputedStyle(sphere, null).getPropertyValue('width'), 0);
@@ -82,20 +99,8 @@ class App extends Component {
               newRA = star.ra + diffRA;
             };
 
-            let newDE = 0;
-            let diffDE = diff.y / sphereSize * 180;
-
-            if (star.de + diffDE > 90) {
-              newDE = 90 - (star.de + diffDE - 90);
-              newRA = (newRA >= 0 && newRA <=12) ? (12 - newRA) + 12 : 24 - newRA;
-            } else {
-              newDE = (star.ra >= 0 && star.ra <=12) ? star.de + diffDE : star.de - diffDE;
-            };
-
-            star.ra = newRA;
-            //star.de = newDE;
-            
-          })
+            star.ra = newRA;            
+          });
         });
 
       };

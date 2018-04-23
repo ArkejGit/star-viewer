@@ -22,7 +22,13 @@ const Sphere = ({ stars, magnitudeLimit, onMouseDown, onMouseUp, onMouseOut, onM
 			onMouseMove={ onMouseMove }
 			onMouseOut={ onMouseOut }
 		>
-			{ starsCollection }
+
+			{ stars.length ===0 ? 
+				<span className="glyphicon glyphicon-refresh glyphicon-big glyphicon-spin loader"></span> 
+				: 
+				starsCollection 
+			}
+
 		</div>
 	);
 

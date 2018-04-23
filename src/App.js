@@ -39,8 +39,7 @@ class App extends Component {
         const stars = Object.keys(data.hipstars).map(key => data.hipstars[key]);
         this.setState({
           stars: stars
-        })
-        console.log( this.state.stars );
+        });
         return true;
       });
   };

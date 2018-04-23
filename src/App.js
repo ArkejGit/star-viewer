@@ -46,34 +46,22 @@ class App extends Component {
   };
 
   /**
-  * handleMouseDown()
+  * sphereClick()
   *
-  * Sets state.clicked to true when onMouseDown event appears on Sphere
+  * Sets state.clicked to true
   */
-  handleMouseDown() {
+  sphereClick() {
     this.setState({
       clicked: true
     });
   };
 
   /**
-  * handleMouseUp()
+  * sphereUnclick()
   *
-  * Sets state.clicked to false when onMouseUp event appears on Sphere
+  * Sets state.clicked and state.prevCords to false
   */
-  handleMouseUp() {
-    this.setState({
-      clicked: false,
-      prevCords: false
-    });
-  };
-
-  /**
-  * handleMouseOut()
-  *
-  * Sets state.clicked to false when onMouseOut event appears on Sphere
-  */
-  handleMouseOut() {
+  sphereUnclick() {
     this.setState({
       clicked: false,
       prevCords: false
@@ -144,9 +132,9 @@ class App extends Component {
             <Sphere 
               stars={ this.state.stars }
               magnitudeLimit={ this.state.magnitudeLimit }
-              onMouseDown={ () => this.handleMouseDown() }
-              onMouseUp={ () => this.handleMouseUp() }
-              onMouseOut={ () => this.handleMouseOut() }
+              onMouseDown={ () => this.sphereClick() }
+              onMouseUp={ () => this.sphereUnclick() }
+              onMouseOut={ () => this.sphereUnclick() }
               onMouseMove={  (e) => this.handleMouseMove(e) }
              />
           </div>

@@ -69,6 +69,18 @@ class App extends Component {
   };
 
   /**
+  * handleMouseOut()
+  *
+  * Sets state.clicked to false when onMouseOut event appears on Sphere
+  */
+  handleMouseOut() {
+    this.setState({
+      clicked: false,
+      prevCords: false
+    });
+  };
+
+  /**
   * handleMouseMove()
   *
   * @param {Event Object}   e   Mouse move event object
@@ -134,6 +146,7 @@ class App extends Component {
               magnitudeLimit={ this.state.magnitudeLimit }
               onMouseDown={ () => this.handleMouseDown() }
               onMouseUp={ () => this.handleMouseUp() }
+              onMouseOut={ () => this.handleMouseOut() }
               onMouseMove={  (e) => this.handleMouseMove(e) }
              />
           </div>

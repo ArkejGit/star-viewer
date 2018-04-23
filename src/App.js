@@ -2,9 +2,43 @@ import React, { Component } from 'react';
 import AppNavbar from './AppNavbar/AppNavbar';
 import Sphere from './Sphere/Sphere';
 import InputRangeContainer from './InputRangeContainer/InputRangeContainer';
+import { BrowserRouter, Route } from 'react-router-dom';
 import './App.css';
 
 const API = 'http://www.astropical.space/astrodb/api.php?';
+
+const Home = ({ magnitudeLimit, stars, onMouseDown, onMouseUp, onMouseOut, onMouseMove, onChange }) => {
+
+  return(
+    <div>
+      <div className="col-xs-6 col-xs-offset-3 col-md-4 col-md-offset-4 text-center">
+      <InputRangeContainer 
+      magnitudeLimit={ magnitudeLimit }
+      onChange={ onChange }
+      />
+      </div>
+
+      <div className="col-xs-12">
+      <Sphere 
+      stars={ stars }
+      magnitudeLimit={ magnitudeLimit }
+      onMouseDown={ onMouseDown }
+      onMouseUp={ onMouseUp }
+      onMouseOut={ onMouseOut }
+      onMouseMove={ onMouseMove }
+      />
+      </div>
+    </div>
+  )
+};
+
+const About = () => {
+  return(
+    <div>
+      <p>This is the About page.</p>
+    </div>
+  )
+};
 
 class App extends Component {
 
@@ -110,37 +144,40 @@ class App extends Component {
 
     };
 
-  }
+  };
 
   render() {
     return (
-      <div className="App">
+      <BrowserRouter>
+        <div className="App">
 
-        <AppNavbar />
+          <AppNavbar />
+          
+          <div className="container">
 
-        <div className="container">
-
-          <div className="col-xs-6 col-xs-offset-3 col-md-4 col-md-offset-4 text-center">
-            <InputRangeContainer 
-              magnitudeLimit={ this.state.magnitudeLimit }
-              onChange={ (value) => this.setState({ magnitudeLimit: value }) }
+            <Route 
+              exact path='/'  
+              render={() => <Home
+                magnitudeLimit={ this.state.magnitudeLimit }
+                stars={ this.state.stars }
+                magnitudeLimit={ this.state.magnitudeLimit }
+                onMouseDown={ () => this.sphereClick() }
+                onMouseUp={ () => this.sphereUnclick() }
+                onMouseOut={ () => this.sphereUnclick() }
+                onMouseMove={ (e) => this.handleMouseMove(e) }
+                onChange={ (value) => this.setState({ magnitudeLimit: value }) }
+                />} 
             />
+
+            <Route
+              path='/about'
+              component={About}
+            />
+            
           </div>
 
-          <div className="col-xs-12">
-            <Sphere 
-              stars={ this.state.stars }
-              magnitudeLimit={ this.state.magnitudeLimit }
-              onMouseDown={ () => this.sphereClick() }
-              onMouseUp={ () => this.sphereUnclick() }
-              onMouseOut={ () => this.sphereUnclick() }
-              onMouseMove={  (e) => this.handleMouseMove(e) }
-             />
-          </div>
-
-          </div>
-
-      </div>
+        </div>
+      </BrowserRouter>
     );
   }
 }

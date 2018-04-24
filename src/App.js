@@ -3,42 +3,11 @@ import AppNavbar from './AppNavbar/AppNavbar';
 import Sphere from './Sphere/Sphere';
 import InputRangeContainer from './InputRangeContainer/InputRangeContainer';
 import { BrowserRouter, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import About from './pages/About';
 import './App.css';
 
 const API = 'http://www.astropical.space/astrodb/api.php?';
-
-const Home = ({ magnitudeLimit, stars, onMouseDown, onMouseUp, onMouseOut, onMouseMove, onChange }) => {
-
-  return(
-    <div>
-      <div className="col-xs-6 col-xs-offset-3 col-md-4 col-md-offset-4 text-center">
-      <InputRangeContainer 
-      magnitudeLimit={ magnitudeLimit }
-      onChange={ onChange }
-      />
-      </div>
-
-      <div className="col-xs-12">
-      <Sphere 
-      stars={ stars }
-      magnitudeLimit={ magnitudeLimit }
-      onMouseDown={ onMouseDown }
-      onMouseUp={ onMouseUp }
-      onMouseOut={ onMouseOut }
-      onMouseMove={ onMouseMove }
-      />
-      </div>
-    </div>
-  )
-};
-
-const About = () => {
-  return(
-    <div>
-      <p>This is the About page.</p>
-    </div>
-  )
-};
 
 class App extends Component {
 

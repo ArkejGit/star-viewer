@@ -1,6 +1,6 @@
 import React from 'react';
-import Sphere from '../Sphere/Sphere';
-import InputRangeContainer from '../InputRangeContainer/InputRangeContainer';
+import Sphere from '../components/Sphere/Sphere';
+import InputRangeContainer from '../components/InputRangeContainer/InputRangeContainer';
 
 const Home = ({ magnitudeLimit, stars, onMouseDown, onMouseUp, onMouseOut, onMouseMove, onChange }) => {
 

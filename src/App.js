@@ -160,7 +160,6 @@ class App extends Component {
               render={() => <Home
                 magnitudeLimit={ this.state.magnitudeLimit }
                 stars={ this.state.stars }
-                magnitudeLimit={ this.state.magnitudeLimit }
                 onMouseDown={ () => this.sphereClick() }
                 onMouseUp={ () => this.sphereUnclick() }
                 onMouseOut={ () => this.sphereUnclick() }
@@ -173,7 +172,7 @@ class App extends Component {
               path='/about'
               component={About}
             />
-            
+
           </div>
 
         </div>

@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import AppNavbar from './AppNavbar/AppNavbar';
-import Sphere from './Sphere/Sphere';
-import InputRangeContainer from './InputRangeContainer/InputRangeContainer';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';

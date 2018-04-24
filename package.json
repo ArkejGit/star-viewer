@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "license": "ISC",
+  "homepage": "http://arkejgit.github.io/star-viewer",
   "dependencies": {
     "bootstrap": "3",
     "react": "^16.3.2",

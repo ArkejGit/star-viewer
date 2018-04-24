@@ -2,6 +2,7 @@
   "name": "star-viewer",
   "version": "0.1.0",
   "private": true,
+  "license": "ISC",
   "dependencies": {
     "bootstrap": "3",
     "react": "^16.3.2",

@@ -86,7 +86,7 @@ class App extends Component {
         const diff = { x: this.state.prevCords.x - e.clientX, y: this.state.prevCords.y - e.clientY };
 
         this.setState( prevState => {
-          stars: prevState.stars.map(star => {
+          stars: prevState.stars.map(star => { // eslint-disable-line
 
             let newRA = 0;
             let diffRA = -diff.x / sphereSize * 12;

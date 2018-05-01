@@ -1,10 +1,15 @@
 const express = require('express');
-var request = require('request');
+const request = require('request');
+const path = require('path');
 
 const app = express();
 const port = process.env.PORT || 5000;
 
 const API = 'http://www.astropical.space/astrodb/api.php?';
+
+if (process.env.NODE_ENV === 'production') {
+  app.use('/', express.static(`${__dirname}/client/build`));
+};
 
 app.get('/api/stars', (req, res) => {
 

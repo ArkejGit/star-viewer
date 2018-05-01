@@ -5,8 +5,6 @@ import Home from './pages/Home';
 import About from './pages/About';
 import './App.css';
 
-const API = 'http://www.astropical.space/astrodb/api.php?';
-
 class App extends Component {
 
   constructor( props ) {
@@ -29,8 +27,8 @@ class App extends Component {
   *
   * @return {Boolean} Returns false in case of error, otherwise returns true.
   */
-  getStars() {
-    fetch(`${API}table=stars&which=magnitude&limit=4.97&format=json`)
+  getStars = async () => {
+  fetch('/api/stars')
       .then( res => res.json() )
       .catch( err => {
         console.log( err );

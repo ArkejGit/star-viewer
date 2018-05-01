@@ -4,6 +4,7 @@
   "private": true,
   "license": "ISC",
   "homepage": "http://arkejgit.github.io/star-viewer",
+  "proxy": "http://localhost:5000/",
   "dependencies": {
     "bootstrap": "3",
     "react": "^16.3.2",

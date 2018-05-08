@@ -8,7 +8,7 @@ const port = process.env.PORT || 5000;
 const API = 'http://www.astropical.space/astrodb/api.php?';
 
 if (process.env.NODE_ENV === 'production') {
-  app.use(‘/’, express.static(`${__dirname}/client/build`));
+  app.use(express.static(`${__dirname}/client/build`));
 };
 
 // express will serve up index.html if it doesn't recognize the route

@@ -27,7 +27,7 @@ class App extends Component {
   *
   * @return {Boolean} Returns false in case of error, otherwise returns true.
   */
-  getStars = async () => {
+  getStars() {
   fetch('/api/stars')
       .then( res => res.json() )
       .catch( err => {
